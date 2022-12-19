@@ -23,6 +23,13 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        User::factory(5)->create();
+        $this->call([
+            PermissionSeeder::class,
+        ]);
+        User::factory(2)->create();
+        $admin = User::find(1);
+        $admin->assignRole('admin');
+        $admin = User::find(2);
+        $admin->assignRole('cashier');
     }
 }
