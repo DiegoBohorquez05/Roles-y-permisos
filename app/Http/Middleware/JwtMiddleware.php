@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class JwtMiddleware
 {
@@ -37,7 +38,7 @@ class JwtMiddleware
         {
             return response(['status' => 'El token no ha sido encontrado'], 401);
         }
-        catch (Exception\$e)
+        catch (\Exception $e)
         {
             return response(['status' => 'El token no ha sido encontrado'], 401);
         }
