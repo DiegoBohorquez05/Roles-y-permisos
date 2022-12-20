@@ -37,7 +37,7 @@ class PermissionController extends Controller
     public function deleteRole(Int $id){
         $role = Role::findById($id);
         $role->delete();
-        return 'Eliminado con exito ???????';
+        return 'Eliminado con exito';
     }
 
     public function assignPermission(Request $request){
